@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#total-area {
+    background-color: rgba(128, 128, 0, 0.589);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Adiciona posição relativa para alinhar elementos filhos */
+}
+
+#game-area {
+    background-color: aliceblue;
+    width: 90vw;
+    height: 90vh;
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Mantém a posição relativa para elementos filhos */
+    overflow: hidden;
+    /* Garante que as linhas não transbordem o game-area */
+    z-index: 1;
+    /* Garante que o game-area esteja na frente do background */
+}
+
+#background {
+    background-color: rgba(240, 248, 255, 0.336);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    /* Define z-index menor para ficar atrás do game-area */
+}
+
+#line-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* Define z-index maior para ficar na frente do game-area */
+}
+
+.line {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Cor das linhas */
+}
+
+.vertical-line {
+    top: 0;
+    bottom: 0;
+    width: 1px;
+}
+
+.horizontal-line {
+    left: 0;
+    right: 0;
+    height: 1px;
+}
+
+#game {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    position: relative;
+    /* Mantém a posição relativa para alinhar elementos filhos */
+    z-index: 3;
+    /* Define z-index maior para estar na frente de todos */
+}
+
+button {
+    position: relative;
+    /* Mantém a posição relativa para alinhar elementos filhos */
+    z-index: 4;
+    /* Define z-index maior para estar na frente de todos */
+}
+
+.start-button {
+    border-radius: 15px;
+    background-color: rgba(240, 248, 255, 0.336);
+    height: 20%;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: rgba(240, 248, 255, 0.616);
+}
+
+.player {
+    background-color: rgb(7, 102, 185);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.food {
+    width: 2px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+}
